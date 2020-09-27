@@ -19,9 +19,12 @@ def main():
 
     #st.dataframe(analysis.get_data()) 
 
+    data = analysis.get_data()
+    bins = range(0,50,5)
+    data['speed_bins'] = pd.cut(data['sped'], bins)
 
     st.subheader("Rose Diagram")
-    st.plotly_chart(analysis.get_rose_diagram(analysis.get_data()))
+    st.plotly_chart(analysis.get_rose_diagram(data)
 
 
 
