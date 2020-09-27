@@ -15,6 +15,14 @@ def main():
     #df = load_data()
 
     st.header("Shell AI Hackathlon")
+
+
+    year_list = os.listdir('./data/wind_data/')
+    years = [y.split('_')[2].split('.csv')[0] for y in year_list]
+    
+    option = st.selectbox('Select the Year',(years))
+    st.write('You selected:', option)
+
     #st.subheader("Year Wise Analysis")
 
     #st.dataframe(analysis.get_data()) 
@@ -28,7 +36,7 @@ def main():
     st.plotly_chart(analysis.get_rose_diagram(data), width = 900, height = 900)
 
     analysis.get_rose_diagram(data).update_layout(width = 900, height = 900)
-    analysis.get_rose_diagram(data).show()
+    #analysis.get_rose_diagram(data).show()
 
 if __name__ == "__main__":
     main()
