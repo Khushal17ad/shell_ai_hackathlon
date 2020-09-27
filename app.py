@@ -22,6 +22,10 @@ def main():
     st.dataframe(analysis.get_data()) 
 
 
+    st.subheader("Rose Diagram")
+    st.plotly_chart(fig)
+
+
 
 if __name__ == "__main__":
     main()
