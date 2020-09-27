@@ -5,9 +5,7 @@ import os
 #cwd = os.getcwd()
 #print (cwd)  
 
-wind_2007 = pd.read_csv('./data/wind_data/wind_data_2007.csv')
+def get_data():
 
-print ('hello')
-
-
-return wind_2007
+    wind_2007 = pd.read_csv('./data/wind_data/wind_data_2007.csv')
+    return wind_2007
