@@ -20,22 +20,30 @@ def main():
     year_list = os.listdir('./data/wind_data/')
     years = [y.split('_')[2].split('.csv')[0] for y in year_list]
     
-    option = st.selectbox('Select the Year',('2007','2008'))
+    option = st.selectbox('Select the Year',(' ', '2007','2008'))
     st.write('You selected:', option)
+
+    if option == ' ':
+        print ('Please Select the Year')
+
+    else:
+        file_name = 'wind_data_' + option + '.csv' 
+        
+        data = analysis.get_data(file_name)
+        data['sped'] = pd.to_numeric(data['sped'])
+        bins = [*range(0, 50, 7)] 
+        data['speed_bins'] = pd.cut(data['sped'], bins)
+        
+        st.subheader("Rose Diagram")
+        st.plotly_chart(analysis.get_rose_diagram(data), width = 900, height = 900)
+
+        analysis.get_rose_diagram(data).update_layout(width = 900, height = 900)
+
 
     #st.subheader("Year Wise Analysis")
 
     #st.dataframe(analysis.get_data()) 
 
-    data = analysis.get_data()
-    data['sped'] = pd.to_numeric(data['sped'])
-    bins = [*range(0, 50, 7)] 
-    data['speed_bins'] = pd.cut(data['sped'], bins)
-    
-    st.subheader("Rose Diagram")
-    st.plotly_chart(analysis.get_rose_diagram(data), width = 900, height = 900)
-
-    analysis.get_rose_diagram(data).update_layout(width = 900, height = 900)
     #analysis.get_rose_diagram(data).show()
 
 if __name__ == "__main__":
