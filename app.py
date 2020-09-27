@@ -20,7 +20,7 @@ def main():
     year_list = os.listdir('./data/wind_data/')
     years = [y.split('_')[2].split('.csv')[0] for y in year_list]
     
-    option = st.selectbox('Select the Year',tuple(years))
+    option = st.selectbox('Select the Year',('2007','2008'))
     st.write('You selected:', option)
 
     #st.subheader("Year Wise Analysis")
