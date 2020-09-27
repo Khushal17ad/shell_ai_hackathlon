@@ -21,7 +21,7 @@ def main():
 
     data = analysis.get_data()
     bins = [range(0,5,50)]
-    data['binned'] = pd.cut(data['sped'], bins)
+    data['speed_bins'] = pd.cut(data['sped'], bins)
     
     st.subheader("Rose Diagram")
     st.plotly_chart(analysis.get_rose_diagram(data))
