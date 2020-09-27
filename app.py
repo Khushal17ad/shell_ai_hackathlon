@@ -19,7 +19,7 @@ def main():
     st.header("Shell AI Hackathlon")
     st.subheader("Year Wise Analysis")
 
-    st.dataframe(analysis) 
+    st.dataframe(analysis.get_data()) 
 
 
 
