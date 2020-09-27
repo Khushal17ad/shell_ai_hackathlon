@@ -21,7 +21,7 @@ def main():
 
     data = analysis.get_data()
     data['sped'] = pd.to_numeric(data['sped'])
-    bins = [*range(0, 50, 5)] 
+    bins = [*range(0, 50, 7)] 
     data['speed_bins'] = pd.cut(data['sped'], bins)
     
     st.subheader("Rose Diagram")
