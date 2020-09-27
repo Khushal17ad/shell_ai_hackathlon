@@ -20,7 +20,8 @@ def main():
     #st.dataframe(analysis.get_data()) 
 
     data = analysis.get_data()
-    bins = [range(0,5,50)]
+    data['sped'] = pd.to_numeric(data['sped'])
+    bins = [*range(0, 50, 5)] 
     data['speed_bins'] = pd.cut(data['sped'], bins)
     
     st.subheader("Rose Diagram")
