@@ -27,7 +27,7 @@ def main():
     st.subheader("Rose Diagram")
     st.plotly_chart(analysis.get_rose_diagram(data))
 
-
+    analysis.get_rose_diagram(data).show()
 
 if __name__ == "__main__":
     main()
