@@ -15,9 +15,9 @@ def main():
     #df = load_data()
 
     st.header("Shell AI Hackathlon")
-    st.subheader("Year Wise Analysis")
+    #st.subheader("Year Wise Analysis")
 
-    st.dataframe(analysis.get_data()) 
+    #st.dataframe(analysis.get_data()) 
 
 
     st.subheader("Rose Diagram")
