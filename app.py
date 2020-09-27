@@ -11,13 +11,17 @@ from sklearn import manifold
 import streamlit as st
 import os
 
+import analysis
+
 def main():
     #df = load_data()
 
     st.header("Shell AI Hackathlon")
-
-
     st.subheader("Year Wise Analysis")
+
+    st.dataframe(analysis) 
+
+
 
 if __name__ == "__main__":
     main()
