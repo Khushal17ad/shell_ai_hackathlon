@@ -28,23 +28,26 @@ def main():
 
     else:
         file_name = 'wind_data_' + option + '.csv' 
-        
-        data = analysis.get_data(file_name)
-        data['sped'] = pd.to_numeric(data['sped'])
-        bins = [*range(0, 50, 7)] 
-        data['speed_bins'] = pd.cut(data['sped'], bins)
-        
-        st.subheader("Rose Diagram")
-        st.plotly_chart(analysis.get_rose_diagram(data), width = 900, height = 900)
+    
+    file_name = 'wind_data_' + '2007' + '.csv'
+    data = analysis.get_data(file_name)
+    data['sped'] = pd.to_numeric(data['sped'])
+    bins = [*range(0, 50, 10)] 
+    data['speed_bins'] = pd.cut(data['sped'], bins)
+    
+    st.subheader("Rose Diagram")
+    st.plotly_chart(analysis.get_rose_diagram(data), width = 900, height = 900)
 
-        analysis.get_rose_diagram(data).update_layout(width = 900, height = 900)
+    analysis.get_rose_diagram(data).update_layout(width = 900, height = 900)
+
+    analysis.get_rose_diagram(data).show()
 
 
     #st.subheader("Year Wise Analysis")
 
     #st.dataframe(analysis.get_data()) 
 
-    #analysis.get_rose_diagram(data).show()
+    
 
 if __name__ == "__main__":
     main()
