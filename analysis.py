@@ -16,11 +16,11 @@ def get_data():
 
 def get_rose_diagram(data):
 
-    df = analysis.get_data()
+    df = get_data()
     
     fig = px.bar_polar(df, r="frequency", theta="drct",
                    color="speed", template="plotly_dark",
                    color_discrete_sequence= px.colors.sequential.Plasma_r)
     
 
-    return df
+    return fig
