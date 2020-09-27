@@ -21,7 +21,7 @@ def main():
 
 
     st.subheader("Rose Diagram")
-    st.plotly_chart(analysis.get_rose_diagram(analysis.get_data()))
+    st.plotly_chart(analysis.get_rose_diagram(analysis.get_data()[:500]))
 
 
 
