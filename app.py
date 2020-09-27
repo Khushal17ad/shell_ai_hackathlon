@@ -1,14 +1,12 @@
 # import the required libraries
-import matplotlib.pyplot as plt  
 import numpy as np  
 import pandas as pd  
-import seaborn as sns  
-from sklearn import datasets  
-from sklearn import manifold  
+
 
 #%matplotlib inline  
 
 import streamlit as st
+
 import os
 
 import analysis
@@ -23,7 +21,7 @@ def main():
 
 
     st.subheader("Rose Diagram")
-    st.plotly_chart(fig)
+    st.plotly_chart(analysis.get_rose_diagram(analysis.get_data()))
 
 
 
