@@ -11,7 +11,7 @@ import plotly.express as px
 
 def get_data(file_name):
 
-    wind_2007 = pd.read_csv(file_name)
+    wind_2007 = pd.read_csv('./data/wind_data/' + file_name)
 
     return wind_2007
 
