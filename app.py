@@ -27,10 +27,12 @@ def main():
     st.plotly_chart(analysis.get_rose_diagram(data)
 
 
+    return None
+
+
 
 if __name__ == "__main__":
     main()
-
 
 
 
