@@ -58,7 +58,7 @@ def main():
         #g['Speed [m/s]'] = g['speed_binned']
 
         dfe.replace(r'North', 'N', regex=True)
-        print(dfe)
+        print(dfe['percentage'])
         
         st.subheader("Rose Diagram")
         st.plotly_chart(analysis.get_rose_diagram(dfe), width = 900, height = 900)
