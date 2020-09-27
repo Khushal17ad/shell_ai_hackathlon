@@ -16,7 +16,7 @@ def get_data():
 
 def get_rose_diagram(data):
     
-    fig = px.bar_polar(data[:500], r="drct", 
+    fig = px.bar_polar(data, r="drct", 
                    color="speed_bins", template="plotly_dark",
                    color_discrete_sequence= px.colors.sequential.Plasma_r)
     
