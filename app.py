@@ -19,7 +19,7 @@ def main():
     year_list = os.listdir('./data/wind_data/')
     years = [y.split('_')[2].split('.csv')[0] for y in year_list]
     
-    option = st.selectbox('Select the Year',(' ', '2007','2008'))
+    option = st.selectbox('Select the Year',(' ', '2007','2008','2009','2013','2014','2015','2017'))
     st.write('You selected:', option)
 
     if option == ' ':
