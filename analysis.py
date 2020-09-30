@@ -52,7 +52,7 @@ def analyze_rose_diagram_data(year):
 
     return dfe
 
-def get_time_plot():
+def get_time_plot(year):
     file_name = 'wind_data_' + year + '.csv'
     data = get_data(file_name)
 
