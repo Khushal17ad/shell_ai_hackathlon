@@ -17,20 +17,13 @@ def get_data(file_name):
 
 def get_rose_diagram(data):
     
-    
-    
-    
     fig = px.bar_polar(data, r = 'percentage%' , theta="drct",
                    color="Speed [m/s]", template="plotly_dark",
                    color_discrete_sequence= px.colors.sequential.Plasma_r) #r="drct"
 
-    
-
     return fig
 
-
-
-def analyze_data(year):
+def analyze_rose_diagram_data(year):
     file_name = 'wind_data_' + year + '.csv'
     data = get_data(file_name)
     data['sped'] = pd.to_numeric(data['sped'])
@@ -51,15 +44,18 @@ def analyze_data(year):
                         'speed_binned' : 'Speed [m/s]',
                         'level_1': 'drct'}, inplace=True)  #changing the last column to represent frequencies
     
-
-
-    
     dfe['percentage'] = dfe['freq']/dfe['freq'].sum()
     dfe['percentage%'] = dfe['percentage']*100
 
-
     dfe.replace(r'North', 'N', regex=True)
     #print(dfe['percentage'])
-    
-    
+
     return dfe
+
+def get_time_plot():
+    file_name = 'wind_data_' + year + '.csv'
+    data = get_data(file_name)
+
+    fig = px.line(data, x='date', y="sped")
+
+    return fig
