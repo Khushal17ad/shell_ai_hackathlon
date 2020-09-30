@@ -38,7 +38,7 @@ def main():
         
             st.subheader("Rose Diagram")
 
-            dfe = analysis.get_data(year_option)
+            dfe = analysis.analyze_data(year_option)
             st.plotly_chart(analysis.get_rose_diagram(dfe), width = 900, height = 900)
 
             #analysis.get_rose_diagram(dfe).update_layout(width = 900, height = 900)
