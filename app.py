@@ -14,7 +14,7 @@ import analysis
 def main():
     #df = load_data()
 
-    st.header("Shell AI Hackathlon")
+    st.sidebar.header("Shell AI Hackathlon")
 
     year_list = os.listdir('./data/wind_data/')
     years = [y.split('_')[2].split('.csv')[0] for y in year_list]
