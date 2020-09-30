@@ -44,7 +44,7 @@ def main():
             #analysis.get_rose_diagram(dfe).update_layout(width = 900, height = 900)
             #analysis.get_rose_diagram(dfe).show()
             
-            st.plotly_chart(analysis.get_time_plot(year_option), width = 900, height = 1500)
+            st.plotly_chart(analysis.get_time_plot(year_option), width = 1500, height = 900)
 
             #analysis.get_time_plot(year_option).update_layout(width = 900, height = 1500)
             #analysis.get_time_plot(year_option).show()
