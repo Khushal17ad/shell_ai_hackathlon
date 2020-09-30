@@ -32,7 +32,7 @@ def get_rose_diagram(data):
 
 def analyze_data(year):
     file_name = 'wind_data_' + year + '.csv'
-    data = analysis.get_data(file_name)
+    data = get_data(file_name)
     data['sped'] = pd.to_numeric(data['sped'])
     bins = [*range(0, 30, 7)] 
     data['speed_binned'] = pd.cut(data['sped'], bins)
