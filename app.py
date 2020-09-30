@@ -29,14 +29,14 @@ def main():
 
     
         year_option = st.sidebar.selectbox('Select the Year',(' ', '2007','2008','2009','2013','2014','2015','2017'))
-        st.write('You selected:', year_option)
+        #st.write('Rose diagram  selected:', year_option)
 
         if year_option == ' ':
             print ('Please Select the Year')
 
         else:
-        
-            st.subheader("Rose Diagram")
+            rose_diagram_header = 'Rose Diagram for the year: ' + year_option
+            st.subheader(rose_diagram_header)
 
             dfe = analysis.analyze_data(year_option)
             st.plotly_chart(analysis.get_rose_diagram(dfe), width = 900, height = 900)
