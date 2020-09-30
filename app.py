@@ -20,7 +20,7 @@ def main():
     years = [y.split('_')[2].split('.csv')[0] for y in year_list]
     
     
-    plot_option = st.sidebar.selectbox('Select the Plot',(' ', 'Rose Diagram'))
+    #plot_option = st.sidebar.selectbox('Select the Plot',(' ', 'Rose Diagram'))
 
     #if plot_option == ' ':
     #    print ('Please Select the Plot')
