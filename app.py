@@ -31,7 +31,7 @@ def main():
         year_option = st.sidebar.selectbox('Select the Year',(' ', '2007','2008','2009','2013','2014','2015','2017'))
         st.write('You selected:', year_option)
 
-        if option == ' ':
+        if year_option == ' ':
             print ('Please Select the Year')
 
         else:
