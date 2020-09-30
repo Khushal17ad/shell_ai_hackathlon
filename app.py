@@ -38,12 +38,14 @@ def main():
             rose_diagram_header = 'Rose Diagram for the year: ' + year_option
             st.subheader(rose_diagram_header)
 
-            dfe = analysis.analyze_data(year_option)
+            dfe = analysis.analyze_rose_diagram_data(year_option)
             st.plotly_chart(analysis.get_rose_diagram(dfe), width = 900, height = 900)
 
             #analysis.get_rose_diagram(dfe).update_layout(width = 900, height = 900)
             #analysis.get_rose_diagram(dfe).show()
             
+            st.plotly_chart(analysis.get_time_plot(year_option), width = 900, height = 900)
+
 
 if __name__ == "__main__":
     main()
