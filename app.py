@@ -47,7 +47,7 @@ def main():
         time_diagram_header = 'Time Series for the year: ' + year_option
         st.subheader(time_diagram_header)
 
-        st.plotly_chart(analysis.get_time_plot(year_option), width = 1500, height = 900)
+        st.plotly_chart(analysis.get_time_plot(year_option), width = 2000, height = 900)
 
         #analysis.get_time_plot(year_option).update_layout(width = 900, height = 1500)
         #analysis.get_time_plot(year_option).show()
