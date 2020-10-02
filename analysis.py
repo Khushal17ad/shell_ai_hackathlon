@@ -9,9 +9,9 @@ import plotly.express as px
 
 def get_data(file_name):
 
-    wind_2007 = pd.read_csv('./data/wind_data/' + file_name)
-
-    return wind_2007
+    wind_data = pd.read_csv('./data/wind_data/' + file_name)
+    wind_data.rename(columns={'sped':'Speed'},inplace=True)
+    return wind_data
 
 
 
