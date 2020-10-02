@@ -11,6 +11,7 @@ def get_data(file_name):
 
     wind_data = pd.read_csv('./data/wind_data/' + file_name)
     wind_data.rename(columns={'sped':'Speed'},inplace=True)
+    print (wind_data.columns)
     return wind_data
 
 
