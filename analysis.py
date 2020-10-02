@@ -26,16 +26,16 @@ def get_rose_diagram(data):
 def analyze_rose_diagram_data(year):
     file_name = 'wind_data_' + year + '.csv'
     data = get_data(file_name)
-    data['sped'] = pd.to_numeric(data['sped'])
+    data['Speed'] = pd.to_numeric(data['Speed'])
     bins = [*range(0, 30, 7)] 
-    data['speed_binned'] = pd.cut(data['sped'], bins)
+    data['speed_binned'] = pd.cut(data['Speed'], bins)
 
     bins_dir = [0, 11.25, 33.75, 56.25, 78.75,101.25,123.75,146.25,168.75,191.25,213.75,236.25,258.75,281.25,303.75,326.25,348.75, 360.00]
     bins_dir_labels = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW','North']
 
     data['dir_binned'] = pd.cut(data['drct'],bins_dir, labels=bins_dir_labels)
     
-    dfe = data[['speed_binned', 'drct','sped']].copy()
+    dfe = data[['speed_binned', 'drct','Speed']].copy()
 
     dfe = dfe.groupby('speed_binned')['drct'].apply(lambda x: x.value_counts())
     dfe = pd.DataFrame(dfe).reset_index()
