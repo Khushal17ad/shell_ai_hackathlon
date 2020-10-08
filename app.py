@@ -30,7 +30,7 @@ def main():
     
     year_option = st.sidebar.selectbox('Select the Year',(' ', '2007','2008','2009','2013','2014','2015','2017'))
     #st.write('Rose diagram  selected:', year_option)
-
+    #year_option = '2007'
     if year_option == ' ':
         print ('Please Select the Year')
 
@@ -49,13 +49,18 @@ def main():
 
         st.plotly_chart(analysis.get_time_plot(year_option), width = 2000, height = 900)
 
+        heat_diagram_header = 'Heat Map for the year: ' + year_option
+        st.subheader(heat_diagram_header)
+
+        st.plotly_chart(analysis.heat_map_analysis(year_option))
+
         #analysis.get_time_plot(year_option).update_layout(width = 900, height = 1500)
         #analysis.get_time_plot(year_option).show()
 
 if __name__ == "__main__":
     main()
 
-
+#main()
 
 # C:\Users\khush\github_projects\python_3.7\streamlit C:\Users\khush\github_projects\machine_learning\supervised_unsupervised_learning\unsupervised.py
 
