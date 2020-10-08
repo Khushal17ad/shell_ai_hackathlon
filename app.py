@@ -39,7 +39,7 @@ def main():
         st.subheader(rose_diagram_header)
 
         dfe = analysis.analyze_rose_diagram_data(year_option)
-        st.plotly_chart(analysis.get_rose_diagram(dfe), width = 900, height = 900)
+        st.plotly_chart(analysis.get_rose_diagram(dfe), width = 600, height = 600)
 
         #analysis.get_rose_diagram(dfe).update_layout(width = 900, height = 900)
         #analysis.get_rose_diagram(dfe).show()
@@ -47,12 +47,12 @@ def main():
         time_diagram_header = 'Time Series for the year: ' + year_option
         st.subheader(time_diagram_header)
 
-        st.plotly_chart(analysis.get_time_plot(year_option), width = 2000, height = 900)
+        st.plotly_chart(analysis.get_time_plot(year_option), width = 1500, height = 600)
 
         heat_diagram_header = 'Heat Map for the year: ' + year_option
         st.subheader(heat_diagram_header)
 
-        st.plotly_chart(analysis.heat_map_analysis(year_option), width = 2000, height = 900)
+        st.plotly_chart(analysis.heat_map_analysis(year_option), width = 1500, height = 600)
 
         #analysis.get_time_plot(year_option).update_layout(width = 900, height = 1500)
         #analysis.get_time_plot(year_option).show()
