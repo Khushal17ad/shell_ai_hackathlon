@@ -30,7 +30,7 @@ def main():
     
     year_option = st.sidebar.selectbox('Select the Year',(' ', '2007','2008','2009','2013','2014','2015','2017'))
 
-    #year_option = '2007'
+    year_option = '2007'
     if year_option == ' ':
         print ('Please Select the Year')
 
@@ -56,6 +56,7 @@ def main():
 
         #analysis.get_time_plot(year_option).update_layout(width = 900, height = 1500)
         #analysis.get_time_plot(year_option).show()
+        analysis.heat_map_analysis(year_option).show()
 
 if __name__ == "__main__":
     main()
