@@ -30,7 +30,7 @@ def main():
     
     year_option = st.sidebar.selectbox('Select the Year',(' ', '2007','2008','2009','2013','2014','2015','2017'))
 
-    year_option = '2007'
+    #year_option = '2007'
     if year_option == ' ':
         print ('Please Select the Year')
 
