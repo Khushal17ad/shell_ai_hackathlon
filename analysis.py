@@ -77,9 +77,11 @@ def heat_map_analysis(year):
     trace = go.Heatmap(z = data['Speed'],
                    y = data['drct'],
                    x = data['speed_binned_codes'],
-                   colorscale="Viridis")
+                   colorscale="Viridis",
+                   colorbar={"title": 'Speed (m/s)'})
     fig = go.Figure(data=[trace],
-                    layout={'xaxis': {'type': 'category'}})
+                    layout={'xaxis': {'title' : 'Speed (m/s)','type': 'category'},
+                    'yaxis': {'title' : 'Direction'}})
 
     
     return fig
