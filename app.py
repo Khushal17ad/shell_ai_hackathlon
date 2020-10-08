@@ -52,7 +52,7 @@ def main():
         heat_diagram_header = 'Heat Map for the year: ' + year_option
         st.subheader(heat_diagram_header)
 
-        st.plotly_chart(analysis.heat_map_analysis(year_option), width = 1800, height = 600)
+        st.plotly_chart(analysis.heat_map_analysis(year_option), width = 1500, height = 800)
 
         #analysis.get_time_plot(year_option).update_layout(width = 900, height = 1500)
         #analysis.get_time_plot(year_option).show()
