@@ -61,7 +61,7 @@ def get_time_plot(year):
     file_name = 'wind_data_' + year + '.csv'
     data = get_data(file_name)
 
-    fig = px.line(data, x='date', y="Wind Speed [m/s]")
+    fig = px.line(data, x='date', y='Wind Speed [m/s]')
 
     return fig
 
