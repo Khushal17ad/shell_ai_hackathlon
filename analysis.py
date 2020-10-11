@@ -2,6 +2,9 @@ import pandas as pd
 import os
 import plotly.express as px
 import plotly.graph_objs as go
+import plotly.figure_factory as ff
+from plotly.subplots import make_subplots
+
 
 
 #cwd = os.getcwd()
@@ -11,7 +14,7 @@ import plotly.graph_objs as go
 def get_data(file_name):
 
     wind_data = pd.read_csv('./data/wind_data/' + file_name)
-    wind_data.rename(columns={'sped':'Speed [m/s]'},inplace=True)
+    wind_data.rename(columns={'sped':'Wind Speed [m/s]'},inplace=True)
     return wind_data
 
 
@@ -19,7 +22,7 @@ def get_data(file_name):
 def get_rose_diagram(data):
     
     fig = px.bar_polar(data, r = 'percentage%' , theta="drct",
-                   color="Speed [m/s]", template="plotly_dark",
+                   color="Wind Speed [m/s]", template="plotly_dark",
                    color_discrete_sequence= px.colors.sequential.Plasma_r) #r="drct"
 
     return fig
@@ -27,7 +30,8 @@ def get_rose_diagram(data):
 def analyze_rose_diagram_data(year):
     file_name = 'wind_data_' + year + '.csv'
     data = get_data(file_name)
-    data['Speed'] = pd.to_numeric(data['Speed [m/s]'])
+
+    data['Speed'] = pd.to_numeric(data['Wind Speed [m/s]'])
     bins = [*range(0, 30, 7)] 
     data['speed_binned'] = pd.cut(data['Speed'], bins)
 
@@ -42,7 +46,7 @@ def analyze_rose_diagram_data(year):
     dfe = pd.DataFrame(dfe).reset_index()
     
     dfe.rename(columns={'drct':'freq',
-                        'speed_binned' : 'Speed [m/s]',
+                        'speed_binned' : 'Wind Speed [m/s]',
                         'level_1': 'drct'}, inplace=True)  #changing the last column to represent frequencies
     
     dfe['percentage'] = dfe['freq']/dfe['freq'].sum()
@@ -66,7 +70,7 @@ def heat_map_analysis(year):
     file_name = 'wind_data_' + year + '.csv'
     data = get_data(file_name)
     
-    data['Speed'] = pd.to_numeric(data['Speed [m/s]'])
+    data['Speed'] = pd.to_numeric(data['Wind Speed [m/s]'])
     bins = [*range(0, 32, 2)] 
     data['speed_binned'] = pd.cut(data['Speed'], bins)#
 
@@ -78,10 +82,41 @@ def heat_map_analysis(year):
                    y = data['drct'],
                    x = data['speed_binned_codes'],
                    colorscale="Viridis",
-                   colorbar={"title": 'Speed (m/s)'})
+                   colorbar={"title": 'Wind Speed (m/s)'})
     fig = go.Figure(data=[trace],
-                    layout={'xaxis': {'title' : 'Speed (m/s)','type': 'category'},
+                    layout={'xaxis': {'title' : 'Wind Speed (m/s)','type': 'category'},
                     'yaxis': {'title' : 'Direction'}})
 
     
     return fig
+
+def frequency_analysis(year_list):
+    
+
+    fig = make_subplots(rows=1, cols=1)
+    
+    for year in year_list:
+        file_name = 'wind_data_' + year + '.csv'
+        data = get_data(file_name)
+
+        fig.add_trace(go.Histogram(x=data['Wind Speed [m/s]'], histnorm='percent',
+                        xbins=dict(start=0,
+                                    size=2,
+                                    end=data['Wind Speed [m/s]'].max()),
+                        marker=dict(color='rgb(50, 50, 125)'),name = year), row  = 1 , col = 1)
+
+        layout = go.Layout(
+            title="Histogram with Frequency Count"
+        )
+
+    #fig = go.Figure(data=go.Data([trace]), layout=layout)
+
+    """group_labels = ['Wind Speed'] 
+    fig = ff.create_distplot([data['Wind Speed [m/s]']], group_labels,  bin_size=.2)
+    """
+
+    return fig
+
+
+
+print (frequency_analysis(['2007','2008','2009']).show())
