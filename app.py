@@ -21,6 +21,8 @@ def main():
     year_list = os.listdir('./data/wind_data/')
     years = [y.split('_')[2].split('.csv')[0] for y in year_list]
     
+    link = '[GitHub](http://github.com)'
+    st.markdown(link, unsafe_allow_html=True)
     
     #plot_option = st.sidebar.selectbox('Select the Plot',(' ', 'Rose Diagram'))
 
