@@ -50,17 +50,17 @@ def main():
         #analysis.get_rose_diagram(dfe).update_layout(width = 900, height = 900)
         #analysis.get_rose_diagram(dfe).show()
         
-        heat_diagram_header = 'Heat Map for the year: ' + year_option
+        heat_diagram_header = 'Heat Map of Wind Speed and Direction for the year: ' + year_option
         st.subheader(heat_diagram_header)
         st.plotly_chart(analysis.heat_map_analysis(year_option), width = 1500, height = 800)
 
-        frequency_diagram_header = 'Time Series for the year: ' + year_option
+        frequency_diagram_header = 'Time Series of Speed for the year: ' + year_option
         st.subheader(frequency_diagram_header)
-        st.plotly_chart(analysis.get_time_plot(year_option), width = 1500, height = 600)
-
-        time_diagram_header = 'Time Series for the year: ' + year_option
-        st.subheader(time_diagram_header)
         st.plotly_chart(analysis.frequency_analysis(year_option), width = 1500, height = 600)
+
+        time_diagram_header = 'Histogram of Wind Speed for the year: ' + year_option
+        st.subheader(time_diagram_header)
+        st.plotly_chart(analysis.get_time_plot(year_option), width = 1500, height = 600)
 
         #analysis.get_time_plot(year_option).update_layout(width = 900, height = 1500)
         #analysis.get_time_plot(year_option).show()
