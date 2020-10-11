@@ -14,7 +14,7 @@ import analysis
 def main():
     #df = load_data()
 
-    st.sidebar.header("Shell AI Hackathlon")
+    st.header("Shell AI Hackathlon")
 
     st.sidebar.subheader("The data visualized in this web app is referenced from Shell AI Hackathlon:")
     st.sidebar.markdown(
