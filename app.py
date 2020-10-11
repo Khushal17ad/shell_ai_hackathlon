@@ -54,11 +54,11 @@ def main():
         st.subheader(heat_diagram_header)
         st.plotly_chart(analysis.heat_map_analysis(year_option), width = 1500, height = 800)
 
-        frequency_diagram_header = 'Time Series of Speed for the year: ' + year_option
+        frequency_diagram_header = 'Histogram of Wind Speed for the year: ' + year_option
         st.subheader(frequency_diagram_header)
         st.plotly_chart(analysis.frequency_analysis(year_option), width = 1500, height = 600)
 
-        time_diagram_header = 'Histogram of Wind Speed for the year: ' + year_option
+        time_diagram_header = 'Time Series of Wind Speed for the year: ' + year_option
         st.subheader(time_diagram_header)
         st.plotly_chart(analysis.get_time_plot(year_option), width = 1500, height = 600)
 
