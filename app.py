@@ -18,7 +18,7 @@ def main():
 
     st.sidebar.subheader("The data visualized in this web app is referenced from Shell AI Hackathlon:")
     st.sidebar.markdown(
-    """<a href="https://www.shell.in/energy-and-innovation/ai-hackathon.html#:~:text=Description%3A,and%20is%20open%20for%20participation!&text=Energy%20transition%20and%20digitalisation%20are,trends%20in%20the%20coming%20decades.">Shell AI</a>""", unsafe_allow_html=True,
+    """<a href="https://www.hackerearth.com/challenges/competitive/shell-hackathon/?utm_source=shell&utm_medium=redirect&utm_content=target&utm-campaign=signupIconlistControl&utm_term=ExpA">Shell AI</a>""", unsafe_allow_html=True,
 )
 
 
@@ -46,9 +46,6 @@ def main():
 
         dfe = analysis.analyze_rose_diagram_data(year_option)
         st.plotly_chart(analysis.get_rose_diagram(dfe), width = 600, height = 600)
-
-        #analysis.get_rose_diagram(dfe).update_layout(width = 900, height = 900)
-        #analysis.get_rose_diagram(dfe).show()
         
         heat_diagram_header = 'Heat Map of Wind Speed and Direction for the year: ' + year_option
         st.subheader(heat_diagram_header)
@@ -58,7 +55,7 @@ def main():
         st.subheader(frequency_diagram_header)
         st.plotly_chart(analysis.frequency_analysis(year_option), width = 1500, height = 600)
 
-        time_diagram_header = 'Time Series of Wind Speed for the year: ' + year_option
+        time_diagram_header = 'Time Series of for the year: ' + year_option
         st.subheader(time_diagram_header)
         st.plotly_chart(analysis.get_time_plot(year_option), width = 1500, height = 600)
 
