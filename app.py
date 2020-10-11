@@ -16,7 +16,7 @@ def main():
 
     st.sidebar.header("Shell AI Hackathlon")
 
-    st.sidebar.subheader("The data visualized in this website is referenced from Shell AI Hackathlon")
+    st.sidebar.text("The data visualized in this website is referenced from Shell AI Hackathlon")
 
     year_list = os.listdir('./data/wind_data/')
     years = [y.split('_')[2].split('.csv')[0] for y in year_list]
