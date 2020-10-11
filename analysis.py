@@ -97,7 +97,7 @@ def frequency_analysis(year):
     file_name = 'wind_data_' + year + '.csv'
     data = get_data(file_name)
 
-    fig.add_trace(go.Histogram(x=data['Wind Speed [m/s]'], histnorm='percent',
+    """fig.add_trace(go.Histogram(x=data['Wind Speed [m/s]'], histnorm='percent',
                     xbins=dict(start=0,
                                 size=2,
                                 end=data['Wind Speed [m/s]'].max()),
@@ -105,7 +105,17 @@ def frequency_analysis(year):
 
     layout = go.Layout(
         title="Histogram with Frequency Count"
-    )
+    )"""
+
+    trace = go.Histogram(x=data['Wind Speed [m/s]'],
+                    xbins=dict(start=0,
+                                size=2,
+                                end=data['Wind Speed [m/s]'].max()),
+                    marker=dict(color='rgb(50, 50, 125)'),name = year) 
+
+    fig = go.Figure(data=[trace],
+                    layout={'xaxis': {'title' : 'Wind Speed (m/s)'},
+                    'yaxis': {'title' : 'Frequency'}})
 
     #fig = go.Figure(data=go.Data([trace]), layout=layout)
 
