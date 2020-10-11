@@ -90,7 +90,33 @@ def heat_map_analysis(year):
     
     return fig
 
-def frequency_analysis(year_list):
+def frequency_analysis(year):
+
+    fig = make_subplots(rows=1, cols=1)
+    
+    file_name = 'wind_data_' + year + '.csv'
+    data = get_data(file_name)
+
+    fig.add_trace(go.Histogram(x=data['Wind Speed [m/s]'], histnorm='percent',
+                    xbins=dict(start=0,
+                                size=2,
+                                end=data['Wind Speed [m/s]'].max()),
+                    marker=dict(color='rgb(50, 50, 125)'),name = year), row  = 1 , col = 1)
+
+    layout = go.Layout(
+        title="Histogram with Frequency Count"
+    )
+
+    #fig = go.Figure(data=go.Data([trace]), layout=layout)
+
+    """group_labels = ['Wind Speed'] 
+    fig = ff.create_distplot([data['Wind Speed [m/s]']], group_labels,  bin_size=.2)
+    """
+
+    return fig
+
+
+def frequency_analysis_multi(year_list):
     
 
     fig = make_subplots(rows=1, cols=1)
