@@ -23,7 +23,7 @@ def main():
     
 
     st.sidebar.markdown(
-    """<a href="https://www.github.com/">example.com</a>""", unsafe_allow_html=True,
+    """<a href="https://www.shell.in/energy-and-innovation/ai-hackathon.html#:~:text=Description%3A,and%20is%20open%20for%20participation!&text=Energy%20transition%20and%20digitalisation%20are,trends%20in%20the%20coming%20decades.">Shell AIcom</a>""", unsafe_allow_html=True,
 )
     
     #plot_option = st.sidebar.selectbox('Select the Plot',(' ', 'Rose Diagram'))
