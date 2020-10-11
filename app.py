@@ -21,7 +21,8 @@ def main():
     year_list = os.listdir('./data/wind_data/')
     years = [y.split('_')[2].split('.csv')[0] for y in year_list]
     
-    st.markdown(
+
+    st.sidebar.markdown(
     """<a href="https://www.github.com/">example.com</a>""", unsafe_allow_html=True,
 )
     
