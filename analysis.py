@@ -117,12 +117,6 @@ def frequency_analysis(year):
                     layout={'xaxis': {'title' : 'Wind Speed (m/s)'},
                     'yaxis': {'title' : 'Frequency'}})
 
-    #fig = go.Figure(data=go.Data([trace]), layout=layout)
-
-    """group_labels = ['Wind Speed'] 
-    fig = ff.create_distplot([data['Wind Speed [m/s]']], group_labels,  bin_size=.2)
-    """
-
     return fig
 
 
