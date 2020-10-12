@@ -30,7 +30,7 @@ def main():
     if analysis_type == ' ':
         print ('Please Select the Analysis Type')
 
-    elif plot_option == 'Single Year':
+    elif analysis_type == 'Single Year':
 
     
 
