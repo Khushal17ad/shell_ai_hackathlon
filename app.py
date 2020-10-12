@@ -66,10 +66,11 @@ def main():
     
     else:
         
-        options = st.multiselect('What are your favorite colors',['2007', '2008', '2009', '2013','2014','2015','2017'])
+        options = st.multiselect('Select the years',['2007', '2008', '2009', '2013','2014','2015','2017'])
 
         #st.write('You selected:', options)
-
+        frequency_diagram_header_multi = 'Time Series of for the year: ' + options
+        st.subheader(frequency_diagram_header_multi)
         st.plotly_chart(analysis.frequency_analysis_multi(options), width = 1500, height = 600)
         
 
