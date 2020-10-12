@@ -65,7 +65,10 @@ def main():
             #analysis.heat_map_analysis(year_option).show()
     
     else:
-        pass
+        
+        options = st.multiselect('What are your favorite colors',['Green', 'Yellow', 'Red', 'Blue'])
+
+        st.write('You selected:', options)
 
 if __name__ == "__main__":
     main()
