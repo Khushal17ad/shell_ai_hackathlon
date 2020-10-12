@@ -66,9 +66,13 @@ def main():
     
     else:
         
-        options = st.multiselect('What are your favorite colors',['Green', 'Yellow', 'Red', 'Blue'])
+        options = st.multiselect('What are your favorite colors',['2007', '2008', '2009', '2013','2014','2015','2017'])
 
-        st.write('You selected:', options)
+        #st.write('You selected:', options)
+
+        st.plotly_chart(analysis.frequency_analysis_multi(options), width = 1500, height = 600)
+        
+
 
 if __name__ == "__main__":
     main()
