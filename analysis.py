@@ -147,8 +147,7 @@ def frequency_analysis_multi(year_list):
 
         fig.update_layout(showlegend=False,
                   title_text="Histogram of Wind Speed for Multiple Years",
-                  title_x=0.5,
-                  height=height)
+                  title_x=0.5)
 
     #fig = go.Figure(data=go.Data([trace]), layout=layout)
 
