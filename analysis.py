@@ -122,9 +122,6 @@ def frequency_analysis(year):
 
 def frequency_analysis_multi(year_list):
     
-    r = random.randint(0,255)
-    g = random.randint(0,255)
-    b = random.randint(0,255)
     year_color = {'2007': 'rgb(204, 0, 0)',
                 '2008' : 'rgb(153, 76, 0)',
                 '2009' : 'rgb(76, 153, 0)',
