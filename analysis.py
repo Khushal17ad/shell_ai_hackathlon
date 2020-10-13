@@ -122,13 +122,13 @@ def frequency_analysis(year):
 
 def frequency_analysis_multi(year_list):
     
-    year_color = {'2007': 'rgb(50, 50, 125)',
-                '2008' : 'rgb(50, 10, 125)',
-                '2009' : 'rgb(50, 20, 125)',
-                '2013' : 'rgb(50, 30, 125)',
-                '2014' : 'rgb(50, 40, 125)',
-                '2015' : 'rgb(50, 60, 125)',
-                '2017' : 'rgb(50, 70, 125)'}
+    year_color = {'2007': 'rgb(204, 0, 0)',
+                '2008' : 'rgb(153, 76, 0)',
+                '2009' : 'rgb(255, 255, 0)',
+                '2013' : 'rgb(128, 255, 0)',
+                '2014' : 'rgb(0, 128, 255)',
+                '2015' : 'rgb(255, 0, 255)',
+                '2017' : 'rgb(204, 0, 102)'}
     fig = make_subplots(rows=1, cols=1)
     
     for year in year_list:
