@@ -142,9 +142,13 @@ def frequency_analysis_multi(year_list):
                                     end=data['Wind Speed [m/s]'].max()),
                         marker=dict(color=year_color[year]),name = year), row  = 1 , col = 1)
 
-        layout = go.Layout(
-            title="Histogram with Frequency Count"
-        )
+        fig.update_xaxes(title_text='Wind Speed [m/s]', row=1, col=1)
+        fig.update_yaxes(title_text='Frequency', row=1, col=1)
+
+        fig.update_layout(showlegend=False,
+                  title_text="Histogram of Wind Speed for Multiple Years",
+                  title_x=0.5,
+                  height=height)
 
     #fig = go.Figure(data=go.Data([trace]), layout=layout)
 
