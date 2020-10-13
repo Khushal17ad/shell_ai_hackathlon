@@ -122,18 +122,25 @@ def frequency_analysis(year):
 
 def frequency_analysis_multi(year_list):
     
-
+    year_color = {'2007': 'rgb(50, 50, 125)',
+                '2008' : 'rgb(50, 10, 125)',
+                '2009' : 'rgb(50, 20, 125)',
+                '2013' : 'rgb(50, 30, 125)',
+                '2014' : 'rgb(50, 40, 125)',
+                '2015' : 'rgb(50, 60, 125)',
+                '2017' : 'rgb(50, 70, 125)'}
     fig = make_subplots(rows=1, cols=1)
     
     for year in year_list:
         file_name = 'wind_data_' + year + '.csv'
         data = get_data(file_name)
+        
 
         fig.add_trace(go.Histogram(x=data['Wind Speed [m/s]'], histnorm='percent',
                         xbins=dict(start=0,
                                     size=2,
                                     end=data['Wind Speed [m/s]'].max()),
-                        marker=dict(color='rgb(50, 50, 125)'),name = year), row  = 1 , col = 1)
+                        marker=dict(color=year_color['year']),name = year), row  = 1 , col = 1)
 
         layout = go.Layout(
             title="Histogram with Frequency Count"
