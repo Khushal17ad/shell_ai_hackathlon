@@ -140,7 +140,7 @@ def frequency_analysis_multi(year_list):
                         xbins=dict(start=0,
                                     size=2,
                                     end=data['Wind Speed [m/s]'].max()),
-                        marker=dict(color=year_color['year']),name = year), row  = 1 , col = 1)
+                        marker=dict(color=year_color[year]),name = year), row  = 1 , col = 1)
 
         layout = go.Layout(
             title="Histogram with Frequency Count"
