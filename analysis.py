@@ -153,6 +153,7 @@ def frequency_analysis_multi(year_list):
 
     """group_labels = ['Wind Speed'] 
     fig = ff.create_distplot([data['Wind Speed [m/s]']], group_labels,  bin_size=.2)
+    Test
     """
 
     return fig
