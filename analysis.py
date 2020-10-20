@@ -145,7 +145,7 @@ def frequency_analysis_multi(year_list):
         fig.update_xaxes(title_text='Wind Speed [m/s]', row=1, col=1)
         fig.update_yaxes(title_text='Frequency', row=1, col=1)
 
-        fig.update_layout(showlegend=False,
+        fig.update_layout(showlegend=True,
                   title_text="Histogram of Wind Speed for Multiple Years",
                   title_x=0.5)
 
